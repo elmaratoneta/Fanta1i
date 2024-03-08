@@ -1,0 +1,220 @@
+/* Reset dei margini e dei padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Stile del body */
+body {
+    background-color: #3C2F60;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+/* Stile dell'header */
+header {
+    background-color: #1E163A;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    margin-left: 20px;
+}
+
+.logo img {
+    max-width: 100px;
+    height: auto;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin-right: 20px;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Stile del main */
+main {
+    padding: 20px;
+}
+
+/* Stile del footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #1E163A;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Stile per il pop-up */
+#popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Rimuovo la scala */
+    background-color: #1E163A;
+    color: white;
+    padding: 110px; /* Ridotto il padding per renderlo meno invasivo */
+    border-radius: 20px;
+    max-width: 80%;
+    z-index: 1000;
+    animation: popupAnimation 0.3s ease forwards;
+    opacity: 0;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Aggiunto un'ombra */
+}
+
+/* Stile per l'icona di chiusura del pop-up */
+#closePopupIcon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    font-size: 24px;
+    color: white; /* Aggiunto il colore */
+}
+
+/* Aggiunto uno stile specifico per la X */
+#closePopupIcon:hover {
+    color: #FFD700; /* Cambia il colore al passaggio del mouse */
+}
+
+/* Animazione per l'apertura del pop-up */
+@keyframes popupAnimation {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Definizione della classe per lo stile personalizzato dell'h1 */
+.popup-title {
+    font-size: 30px;
+    margin-bottom: 20px;
+    /* Aggiungi altri stili personalizzati qui, se necessario */
+}
+
+
+
+
+
+
+
+/* Stile per la sezione della classifica */
+#classifica {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#classifica table {
+    width: 70%;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+#classifica th,
+#classifica td {
+    padding: 10px;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+}
+
+#classifica th {
+    background-color: #1E163A;
+}
+
+#classifica tr:nth-child(1) {
+    background-color: #FFD700; /* Evidenzia la prima riga */
+}
+
+#classifica tr:nth-child(2) {
+    background-color: #C0C0C0; /* Evidenzia la seconda riga */
+}
+
+#classifica tr:nth-child(3) {
+    background-color: #cd7f32; /* Evidenzia la terza riga */
+}
+
+
+/* Stile per la home sfocata quando il pop-up appare */
+main.popup-open {
+    filter: blur(5px); /* Applica un effetto di sfocatura */
+    pointer-events: none; /* Disabilita gli eventi del mouse sulla home */
+}
+
+
+/* Stile per la scritta Classifica */
+#classifica h2 {
+    margin-bottom: 30px; /* Incrementa il margine inferiore */
+}
+
+/* Stile per il contenitore della tabella */
+#classifica table-container {
+    opacity: 0.7; /* Riduci leggermente l'opacità */
+}
+
+/* Stile per il logo */
+.logo img {
+    max-width: 100px; /* Modifica la larghezza massima dell'immagine del logo */
+}
+
+/* Stile per il testo del titolo */
+#popup p strong {
+    font-size: 28px; /* Aumenta la dimensione del carattere */
+    font-weight: bold; /* Rendi il testo in grassetto */
+    margin-top: 40px;
+}
+
+/* Stile per il testo del corpo */
+#popup p {
+    font-size: 25px; /* Dimensione del carattere normale */
+    margin-top: 30px; /* Aggiungi spazio sopra il testo del corpo */
+}
+
+/* Stile per i link del menu */
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    position: relative; /* Posizione relativa per l'effetto di sottolineatura */
+}
+
+/* Effetto di sottolineatura */
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px; /* Spazio sotto il testo */
+    left: 0;
+    width: 100%;
+    height: 2px; /* Altezza della sottolineatura */
+    background-color: transparent; /* Colore iniziale della sottolineatura */
+    transition: background-color 0.3s; /* Animazione per il cambio di colore */
+}
+
+/* Cambio di colore al passaggio del mouse */
+nav ul li a:hover {
+    color: #FFD700; /* Cambia colore del testo al passaggio del mouse */
+}
+
+/* Cambio di colore della sottolineatura al passaggio del mouse */
+nav ul li a:hover::after {
+    background-color: #FFD700; /* Cambia colore della sottolineatura al passaggio del mouse */
+}
+
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina di Accesso</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            padding: 50px;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+        }
+
+        #login-form {
+            max-width: 300px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="password"] {
+            width: calc(100% - 24px);
+            padding: 12px;
+            margin: 0 12px 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        input[type="password"]:focus {
+            outline: none;
+            border-color: #1E90FF;
+        }
+
+        input[type="password"]::placeholder {
+            color: #999;
+        }
+
+        button {
+            width: calc(100% - 24px);
+            padding: 12px;
+            background-color: #1E163A;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #1E145A;
+        }
+    </style>
+</head>
+<body>
+    <h1>Benvenuto!</h1>
+    <div id="login-form">
+        <h2>Accedi alla Home</h2>
+        <form id="access-form">
+            <input type="password" id="password" placeholder="Inserisci la password" required>
+            <button type="submit">Accedi</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("access-form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Impedisce il comportamento predefinito del form
+
+            // Ottieni il valore inserito nell'input della password
+            var password = document.getElementById("password").value;
+
+            // Verifica se la password è corretta
+            if (password === "Fanta1iAccess") {
+                // Se la password è corretta, reindirizza l'utente alla home del sito
+                window.location.href = "index.html";
+            } else {
+                // Se la password è errata, mostra un messaggio di errore
+                alert("Password errata. Riprova.");
+            }
+        });
+    </script>
+</body>
+</html>
